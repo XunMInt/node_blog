@@ -1,0 +1,87 @@
+<html lang="zh" style="font-size: 53px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width， initial-scale=1.0， maximum-scale=1.0， user-scalable=0;">
+    <link rel="stylesheet" href="/home/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/css/font.css">
+    <link rel="stylesheet" href="/home/css/about.css">
+    <link rel="stylesheet" href="/home/css/normalize.css">
+    <link rel="stylesheet" href="/home/css/prism.css">
+
+    <script src="/home/bootstrap/js/jquery.min.js"></script>
+    <script src="/home/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/home/js/link.js"></script>
+    <script src="/home/js/flexible.js"></script>
+    <title>关于 — XunM's</title>
+</head>
+
+<body style="font-size: 15px;">
+    <!-- 菜单 -->
+    {{include './common/menu'}}
+    <!-- 菜单 -->
+
+    <!-- 大屏幕导航 -->
+    {{include './common/header.art'}}
+    <!-- 大屏幕导航 -->
+
+    <!-- 小屏幕导航 -->
+    {{include './common/header-xs.art'}}
+    <!-- 小屏幕导航 -->
+
+    <!-- 文章标题部分 -->
+
+    <div class="bodyer" style="background:url('https://xunm.oss-cn-shanghai.aliyuncs.com/img/1.jpg');background-size:cover;background-position:center">
+        <div class="mask">
+            <div class="container">
+                <div class="row ">
+                    <div class="text">
+                        <h1 style="color: #fff;">关于</h1>
+                        <p class="post-meta"><span class="iconfont">&nbsp;</span><a style="line-height: 22px;" href="#">关于</a><span style="font-size: 20px;line-height: 20px;" class="iconfont">&emsp;&nbsp;</span><a class="num" href="">0</a>
+                            <span class="iconfont">&emsp;&nbsp;</span><span>2020-08-05</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 文章标题部分 -->
+
+    <!-- 文章部分 -->
+    <div class="content-article content">
+        <div class="container article-con">
+            <div class="article">
+                <h1>&nbsp;关于本站</h1>
+                <p><span>当前版本：</span> V1.O</p>
+                <p><span>采用的技术栈：</span>html + css + bootstrap + javascript + jQuery + NodeJs + Express</p>
+                <p><span>实现功能：</span>用户注册登录、用户管理、文章发表、文章管理、评论发布</p>
+                <p><span>其他说明：</span>开发本站是对我这学前端三个月的考验与总结，页面都是自己写的，登录注册页面是模仿<a href="https://lanhuapp.com/" target="_blank">蓝湖</a>的，博客展示页面是模仿<a href="https://blog.guhub.cn/" target="_blank">Eltrac's</a> 的，写起来容易，响应式麻烦，可能技术还是有所欠缺。目前正在申请软件著作权证书，后期可能会考虑开源到github上(我猜也没有人会下载😅)</p>
+                <h1>&nbsp;关于本人</h1>
+                <p><span>简介：</span>半吊子全栈(全干) + 网络工程师</p>
+                <p><span>E-mail：</span>hao@xmint.cn</p>
+                <p><span>座右铭：</span>岂能尽如人意，但求无愧于心&emsp;|&emsp;知耻而后勇</p>
+                <p>&emsp;&emsp;目前大一，去年取得了中级网络工程师认证，今年备战CCIE.曾经有段时间受外界和自己的影响非常厌学，但不知那天突然就豁达了，开始已学习为目标，每天都有数小时的学习任务(目前还在泥潭里，正在爬出来)。在一个很差的学校，很差的环境中，但即使在这么个环境中我也有一群志同道合的朋友，我们甚至会除了去教室上课就是去宿舍自学，当学习成了常态，它会变得理所当然，可能这就是我这两年的感悟吧。</p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 文章部分 -->
+
+
+    <!-- 底部版权信息 -->
+    <div class="footer ">
+        <div class="container ">
+            <p>Copyright © 2020 XunM's， All rights reserved.</p>
+            <a href="http://www.beian.miit.gov.cn" target="_blank"><p>备案号：蜀ICP备20008709号-1</p></a>
+        </div>
+    </div>
+    <!-- 底部版权信息 -->
+    <script>
+        $('pre').addClass('line-numbers')
+    </script>
+    <script src="/home/js/prism.js "></script>
+
+
+</body>
+
+</html>

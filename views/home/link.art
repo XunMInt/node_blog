@@ -1,0 +1,78 @@
+<html lang="zh" style="font-size: 53px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <link rel="stylesheet" href="/home/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/css/font.css">
+    <link rel="stylesheet" href="/home/css/link.css">
+    <link rel="stylesheet" href="/home/css/normalize.css">
+    <link rel="stylesheet" href="/home/css/prism.css">
+
+    <script src="/home/bootstrap/js/jquery.min.js"></script>
+    <script src="/home/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/home/js/link.js"></script>
+    <script src="/home/js/flexible.js"></script>
+    <title>友情链接 — XunM's</title>
+</head>
+
+<body style="font-size: 15px;">
+    <!-- 菜单 -->
+    {{include './common/menu'}}
+    <!-- 菜单 -->
+
+    <!-- 大屏幕导航 -->
+    {{include './common/header.art'}}
+    <!-- 大屏幕导航 -->
+
+    <!-- 小屏幕导航 -->
+    {{include './common/header-xs.art'}}
+    <!-- 小屏幕导航 -->
+
+    <!-- 文章标题部分 -->
+
+    <div class="bodyer" style="background:url('https://xunm.oss-cn-shanghai.aliyuncs.com/img/1.jpg');background-size:cover;background-position:center">
+        <div class="mask">
+            <div class="container">
+                <div class="row ">
+                    <div class="text">
+                        <h1 style="color: #fff;">友情链接</h1>
+                        <p class="post-meta"><span class="iconfont">&nbsp;</span><a style="line-height: 22px;" href="#">友链</a><span style="font-size: 20px;line-height: 20px;" class="iconfont">&emsp;&nbsp;</span><a class="num" href="">0</a>
+                            <span class="iconfont">&emsp;&nbsp;</span><span>2020-08-05</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 文章标题部分 -->
+
+    <!-- 文章部分 -->
+    <div class="content-article content">
+        <div class="container article-con">
+            <div class="article">
+                <h1>&nbsp;友情链接</h1>
+                <p><a href="https://www.fllday.cn" title="笨比小红的博客" target="_blank">笨比小红的博客</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 文章部分 -->
+
+
+    <!-- 底部版权信息 -->
+    <div class="footer ">
+        <div class="container ">
+            <p>Copyright © 2020 XunM's, All rights reserved.</p>
+            <a href="http://www.beian.miit.gov.cn" target="_blank"><p>备案号：蜀ICP备20008709号-1</p></a>
+        </div>
+    </div>
+    <!-- 底部版权信息 -->
+    <script>
+        $('pre').addClass('line-numbers')
+    </script>
+    <script src="/home/js/prism.js "></script>
+
+
+</body>
+
+</html>

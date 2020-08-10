@@ -1,0 +1,23 @@
+<!-- 引入骨架 -->
+{{extend './layout.art'}}
+<!-- 引入骨架 -->
+
+<!-- 内容 -->
+{{block 'main'}}
+<div style="margin: 300px 5.226481rem; text-align: center;;" class="alert alert-danger" role="alert">
+    {{msg}}<br>页面将在<span class="time">{{err_time}}</span>秒内转跳
+</div>
+{{block 'script'}}
+<script>
+    var time = parseInt($('.time').text());
+    setInterval(function() {
+        time--;
+        $('.time').text(time);
+    }, 1000)
+    var timeout = parseInt($('.time').text()) * 1000;
+    setTimeout(function() {
+        location.href = '/admin/';
+    }, timeout)
+</script>
+{{/block}} {{/block}}
+<!-- 内容 -->

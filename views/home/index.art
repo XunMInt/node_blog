@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+    <meta name="description" content="本网站分享个人学习心得、html、javascript、网站源码、免费资讯等内容，这里有丰富的技术教程，方便大家学习！">
+    <meta name="KeyWords" content="迅梦,xunmeng,xunm,学习,分享,html,javascript,ccie">
+    <link rel="stylesheet" href="/home/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/css/index.css">
+    <link rel="stylesheet" href="/home/css/normalize.css">
+    <script src="/home/bootstrap/js/jquery.min.js"></script>
+    <script src="/home/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/home/js/index.js"></script>
+    <script src="/home/js/flexible.js"></script>
+    <script src="/home/js/EasyLazyload.min.js"></script>
+    <title>XunM's | 迅梦的个人技术博客</title>
+</head>
+
+<body>
+
+    <!-- 菜单 -->
+    {{include './common/menu'}}
+    <!-- 菜单 -->
+
+    <!-- 大屏幕导航 -->
+    {{include './common/header.art'}}
+    <!-- 大屏幕导航 -->
+
+    <!-- 小屏幕导航 -->
+    {{include './common/header-xs.art'}}
+    <!-- 小屏幕导航 -->
+
+    <!-- bodyer部分 -->
+    <div class="bodyer">
+        <div class="container">
+            <div class="row">
+                <div class="text">
+                    <h1>XunM's Blog</h1>
+                    <p>岂能尽如人意，但求无愧于心</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bodyer部分 -->
+
+    <!-- 文章区域 -->
+    <div class="content">
+        <div class="container">
+            <div class="blog">
+                {{each articles.records}}
+                <a href="/article?id={{@$value._id}}">
+                    <div class="article">
+                        <div class="row">
+                            <div class="col-sm-6 pic">
+                                <img src="{{$value.cover}}" alt="">
+                            </div>
+                            <div class="col-sm-6 text">
+                                <h1>{{$value.title}}</h1>
+                                <p class="post-excerpt">{{@$value.content.replace(/<[^>]+>/g,'').substr(0,150)}}</p>
+                                <p class="post-meta"><span class="iconfont">&#xe61e;&nbsp;</span><a style="line-height: 22px;" href="#">{{$value.classification}}</a><span style="font-size: 20px;line-height: 23px;" class="iconfont">&emsp;&#xe765;&nbsp;</span><a class="num"
+                                        href="">{{$value.__v}}</a><span class="iconfont">&emsp;&#xe78b;&nbsp;</span>
+                                    <span class="num">{{dateformat($value.publishDate,'yyyy-mm-dd')}}</span></p>
+                                <br>
+                                <a class="post-more" href="/article?id={{@$value._id}}">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="blank_line"></div>
+                {{/each}}
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 文章区域 -->
+
+    <!-- 返回顶部按钮 -->
+    {{include './common/top.art'}}
+    <!-- 返回顶部按钮 -->
+
+    <!-- 底部 -->
+    <div class="footer">
+        <!-- 上一页and下一页 -->
+        <div class="fu">
+            {{if articles.page > 1 }}
+            <a href="/?page={{articles.page - 1}}" class="last">
+                <span class="iconfont">&#xe622;</span>
+            </a>
+            {{/if}} {{if articles.page
+            < articles.pages}} <a href="/?page={{articles.page - 0 + 1}}" class="next">
+                <span class="iconfont">&#xe6cf;</span>
+                </a>
+                {{/if}}
+        </div>
+        <!-- 上一页and下一页 -->
+        <div class="container">
+            <p>Copyright © 2020 XunM's, All rights reserved.</p>
+            <a href="http://www.beian.miit.gov.cn" target="_blank"><p>备案号：蜀ICP备20008709号-1</p></a>
+        </div>
+    </div>
+    <!-- 底部 -->
+
+</body>
+
+</html>

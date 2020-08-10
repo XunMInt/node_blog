@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <link rel="stylesheet" href="/admin/css/register.css">
+    <link rel="stylesheet" href="/admin/ali/css/iconfont.css">
+    <link rel="stylesheet" href="/admin/lib/mdui/css/mdui.min.css">
+    <script src="/admin/lib/mdui/js/mdui.min.js"></script>
+    <title>注册</title>
+</head>
+
+<body class="mdui-theme-accent-blue">
+    <div class="logo">
+        <img src="/admin/images/logo.png" alt="">
+    </div>
+    <div class="bodyer">
+
+        <div class="box">
+            <div class="head">
+                <h3>注册</h3>
+            </div>
+            <form action="/admin/register" method="POST">
+                <div class="wen">
+                    <div class="mdui-textfield user ">
+                        <label class="mdui-textfield-label ">用户名</label>
+                        <input class="mdui-textfield-input " name="username" type="text " required/>
+                        <div class="mdui-textfield-error error ">用户名不能为空</div>
+                    </div>
+                    <div class="mdui-textfield user">
+                        <label class="mdui-textfield-label">邮箱</label>
+                        <input class="mdui-textfield-input" name="email" type="text " required/>
+                        <div class="mdui-textfield-error error ">邮箱不能为空</div>
+                    </div>
+                    <div class="mdui-textfield mima ">
+                        <label class="mdui-textfield-label ">密码</label>
+                        <input class="mdui-textfield-input " name="password" type="password" required/>
+                        <div class="mdui-textfield-error error ">密码不能为空哦</div>
+                    </div>
+                    <button class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-color-theme-accent mdui-ripple denlu ">注册</button>
+                    <div class="link ">
+                        <a class="reg " href="/admin/login">来这登录</a>
+                        <a href="javascript:alert('请联系网站管理员')" class="pass ">忘记密码</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

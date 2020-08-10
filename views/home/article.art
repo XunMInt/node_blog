@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+    <link rel="stylesheet" href="/home/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/css/font.css">
+    <link rel="stylesheet" href="/home/css/article.css">
+    <link rel="stylesheet" href="/home/css/normalize.css">
+    <link rel="stylesheet" href="/home/css/prism.css">
+
+    <script src="/home/bootstrap/js/jquery.min.js"></script>
+    <script src="/home/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/home/js/article.js"></script>
+    <script src="/home/js/flexible.js"></script>
+    <title>{{article.title}} — XunM's</title>
+</head>
+
+<body>
+    <!-- 菜单 -->
+    {{include './common/menu'}}
+    <!-- 菜单 -->
+
+    <!-- 大屏幕导航 -->
+    {{include './common/header.art'}}
+    <!-- 大屏幕导航 -->
+
+    <!-- 小屏幕导航 -->
+    {{include './common/header-xs.art'}}
+    <!-- 小屏幕导航 -->
+
+    <!-- 文章标题部分 -->
+
+    <div class="bodyer" style="background:url('{{article.cover}}');background-size:cover;background-position:center">
+        <div class="mask">
+            <div class="container">
+                <div class="row ">
+                    <div class="text">
+                        <h1 style="color: #fff;">{{article.title}}</h1>
+                        <p class="post-meta"><span class="iconfont">&#xe61e;&nbsp;</span><a style="line-height: 22px;" href="#">{{article.classification}}</a><span style="font-size: 20px;line-height: 20px;" class="iconfont">&emsp;&#xe765;&nbsp;</span><a class="num" href="">{{count}}</a>
+                            <span class="iconfont">&emsp;&#xe78b;&nbsp;</span><span>{{dateformat(article.publishDate,'yyyy-mm-dd')}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 文章标题部分 -->
+
+    <!-- 文章部分 -->
+    <div class="content-article content">
+        <div class="container ">
+            <div class="article">
+                {{@article.content}}
+                <div class="article-footer">
+                    <div class="article-share">分享至：
+                        <a class="social-share qq" target="_blank" href="https://connect.qq.com/widget/shareqq/index.html?url=http://blog.xmint.cn/article?id={{@article._id}}&amp;title={{article.title}}&amp;summary={{article.content.replace(/<[^>]+>/g,'').substr(0,80)}}" title=" 分享至 QQ 好友"><i class="iconfont icon-qq1-copy "></i></a>
+                        <a class="social-share weibo " target="_blank " href="http://service.weibo.com/share/share.php?url=http://blog.xmint.cn/article?id{{@article._id}}/&amp;appkey=XunM's/&amp;title={{article.title}}" title="分享至新浪微博 "><i class="iconfont icon-weibo-copy "></i></a>
+                        <a class="social-share twitter " target="_blank " href="https://twitter.com/intent/tweet?text={{article.content.replace(/<[^>]+>/g,'').substr(0,80)}}&amp;url=http://blog.xmint.cn/article?id{{@article._id}}"><i class="iconfont icon-twitter-copy " title="分享至 Twitter "></i></a>
+                    </div>
+                    <span class="post-tags"><i class="iconfont icon-tags"></i> {{article.classification}}</span>
+                </div>
+            </div>
+            <!-- 评论区部分 -->
+            <div class="respond-box">
+                <div class="respond">
+                    {{if user}}
+                    <p>登录身份：<a href="/admin/">{{user}}</a><a href="/admin/user-exit">&nbsp;退出»</a></p>
+                    {{else}}
+                    <p>登录身份：<a href="javascript:;">请先登录</a><a href="/admin/login">&nbsp;登录»</a></p>
+                    {{/if}}
+                    <form action="/comment" method="post">
+                        {{if userdata}}
+                        <input type="hidden" name="aid" value="{{@article._id}}">
+                        <input type="hidden" name="uid" value="{{@userdata._id}}"> {{/if}}
+                        <textarea name="content" id="" cols="" rows="10" {{if user}} {{else}} readonly style="cursor:no-drop " {{/if}} required></textarea>
+                        <button {{if user}} {{else}} disabled style="cursor:no-drop " {{/if}}>评论</button>
+                    </form>
+                </div>
+                <!-- 评论内容部分 -->
+                <div class="comment">
+                    <h1>已有{{count}}条评论</h1>
+                    {{each comments}}
+                    <div class="comment-content">
+                        <div class="pic head-pic">
+                            <img src="{{$value.uid.portrait}}" alt="">
+                        </div>
+                        <div class="text text-cont">
+                            <div class="cont">
+                                {{$value.content}}
+                            </div>
+                            <span class="name">{{$value.uid.username}}</span>&emsp;<span class="time">{{dateformat($value.time,'yyyy-mm-dd')}}</span>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <!-- 评论内容部分 -->
+            </div>
+            <!-- 评论区部分 -->
+        </div>
+    </div>
+    <!-- 文章部分 -->
+
+    <!-- 返回顶部按钮 -->
+    <div class="top ">
+        <span class="iconfont ">&#xe78c;</span>
+    </div>
+    <!-- 返回顶部按钮 -->
+
+    <!-- 底部版权信息 -->
+    <div class="footer ">
+        <div class="container ">
+            <p>Copyright © 2020 XunM's, All rights reserved.</p>
+            <a href="http://www.beian.miit.gov.cn" target="_blank"><p>备案号：蜀ICP备20008709号-1</p></a>
+        </div>
+    </div>
+    <!-- 底部版权信息 -->
+    <script>
+        $('pre').addClass('line-numbers')
+    </script>
+    <script src="/home/js/prism.js "></script>
+</body>
+
+</html>

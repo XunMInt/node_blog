@@ -1,0 +1,120 @@
+@media screen and (max-width: 500px) {
+    .logo img {
+        top: 3vh !important;
+        left: 10vw !important;
+    }
+    .bodyer {
+        width: 90vw !important;
+    }
+    .bodyer .box .wen {
+        padding: 0px 35px !important;
+    }
+}
+
+body {
+    background: url(../images/bg.png);
+    background-size: 100%;
+}
+
+.logo img {
+    position: absolute;
+    top: 27px;
+    left: 46px;
+    width: 66px;
+}
+
+.bodyer {
+    width: 500px;
+    margin: 0px auto;
+    margin-top: 10vh;
+}
+
+.bodyer .box {
+    height: 560px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px 5px rgba(40, 120, 255, 0.1), 0 16px 24px 2px rgba(0, 0, 0, 0.05);
+}
+
+.bodyer .box .head {
+    padding-top: 50px;
+    height: 130px;
+    text-align: center;
+    line-height: 130px;
+}
+
+.bodyer .box .head h3 {
+    font-size: 36px;
+    color: #396afe;
+    font-weight: bold;
+}
+
+.bodyer .box .wen {
+    height: 385px;
+    padding: 0px 85px;
+}
+
+.bodyer .box .wen .txt {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #797d85;
+    text-align: center;
+}
+
+.bodyer .box .wen .txt strong {
+    font-weight: normal;
+    color: #0d121d;
+}
+
+.bodyer .box .wen .denlu {
+    width: 100%;
+    height: 40px;
+    margin-top: 25px;
+    font-size: 15px;
+    background-color: #50e3c2 !important;
+    box-shadow: 0px 0px 0px 0px !important;
+    border-radius: 4px;
+}
+
+.bodyer .box .wen .denlu:hover {
+    cursor: not-allowed;
+}
+
+.bodyer .box .wen .link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bodyer .box .wen .link .login {
+    color: #2878ff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.bodyer .box .wen .link .pass {
+    float: right;
+    color: #9fa2a8;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.bodyer .box .wen .weixin {
+    margin-top: 90px;
+    text-align: center;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.bodyer .box .wen .weixin a {
+    position: relative;
+    top: 9px;
+    padding: 0px 5px;
+    font-size: 12px;
+    color: #888;
+    background-color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bodyer .box .wen .weixin a:hover {
+    color: #00b333;
+}

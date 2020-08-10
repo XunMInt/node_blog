@@ -1,0 +1,92 @@
+<!-- 引入骨架 -->
+{{extend './common/layout.art'}}
+<!-- 引入骨架 -->
+
+<!-- 内容 -->
+{{block 'main'}}
+
+<!-- 头部 -->
+{{include './common/head.art'}}
+<!-- /头部 -->
+
+<!-- 主体内容 -->
+<div class="content">
+    <!-- 侧边栏 -->
+    {{include './common/aside.art'}}
+    <!-- 侧边栏 -->
+    <div class="main">
+        <!-- 分类标题 -->
+        <div class="title">
+            <h4>发布新文章</h4>
+            <p class="tips">{{message}}</p>
+        </div>
+        <!-- /分类标题 -->
+        <form class="form-container" action=" {{articles && articles ? '/admin/article-modify?id='+id:'/admin/article-add'}}" method="POST">
+            <div class="form-group">
+                <label>标题</label>
+                <input type="text" class="form-control" name="title" placeholder="请输入文章标题" value="{{articles && articles.title}}" required>
+            </div>
+            <div class="form-group">
+                <label>作者</label>
+                <input type="text" class="form-control" value="{{articles && articles.author.username || userdata.username || '该用户已被删除' }}" readonly>
+            </div>
+            <div class="form-group">
+                <label>发布时间</label>
+                <input type="date" name="publishDate" class="form-control" value="{{dateformat(articles && articles.publishDate,'yyyy-mm-dd')}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputFile">文章分类</label>
+                <div class="input-group mb-3">
+                    <input type="text" name="classification" class="form-control" aria-describedby="basic-addon3" placeholder="请填写分类" value="{{articles && articles.classification}}" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputFile">封面图片链接</label>
+                <div class="input-group mb-3">
+                    <input type="text" name="cover" class="form-control" id="file" aria-describedby="basic-addon3" placeholder="请填写图片连接" value="{{articles && articles.cover}}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="thumbnail-waper">
+                    <img class="img-thumbnail" src="{{articles && articles.cover}}" id="preview" style="width: 400px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>内容</label>
+                <textarea id="editor" name="content">{{articles && articles.content}}</textarea>
+                <!-- <textarea class="form-control" id="editor" name="content">{{articles && articles.content}}</textarea> -->
+            </div>
+            <div class="buttons">
+                <input type="submit" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+
+
+</div>
+</div>
+<!-- /主体内容 -->
+
+<!-- 引入样式 -->
+{{block 'script'}}
+<script src="lib/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+    let editor;
+    CKEDITOR.replace('content');
+
+
+    document.querySelector('#file').addEventListener('change', function() {
+        document.querySelector('#preview').src = this.value
+    })
+
+
+    // 获取数据
+    // const editorData = editor.getData();
+</script>
+{{/block}}
+<!-- 引入样式 -->
+
+{{/block}}
+<!-- 内容 -->

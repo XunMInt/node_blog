@@ -1,0 +1,18 @@
+<div class="mobile-menu">
+    <button class="mobile-menu-close" id="toggle-mobile-menu-close"><i class="iconfont icon-">&#xe607;</i></button>
+    <h2 class="mobile-menu-title">页面导航</h2>
+
+    <div class="mobile-menu-pagelist" role="navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6"><a href="/">主页</a></div>
+                <div class="col-xs-6"><a href="/link">友链</a></div>
+                <div class="col-xs-6"><a href="/admin">管理</a></div>
+                <div class="col-xs-6"><a href="/about">关于</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-footer">
+        <p>© 2020 <a href="http://blog.xmint.cn/">XunM's</a> | copyright <a href="http://blog.xmint.cn/" target="_blank">XunM</a></p>
+    </div>
+</div>
